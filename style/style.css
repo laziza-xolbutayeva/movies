@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.frame{
+    height: 470px;
+    overflow: auto;
+    padding: 15px;
+}
+.frame_bookmark{
+    max-height: 270px;
+    overflow: auto;
+}
+.icon_star{
+    width:15px;
+}
+.icon_cale{
+    width:13px;
+}
+.card_pic{
+    height: 214px;
+    background-color: black;
+}
+
