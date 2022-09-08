@@ -52,7 +52,7 @@ const funcmovie=(array,box)=>{
       <div class="card" style="width:286px">
         <div class="card-body">
           <div class="card_pic d-flex align-items-center">
-            <img srcset="${e.bigThumbnail} 1x, ${e.smallThumbnail} 2x" class="card-img-top" alt="${e.title}">
+            <img src="${e.smallThumbnail}" class="card-img-top" alt="${e.title}">
           </div>
           <h3 class="card-title height">${e.title}</h3>
           <p class=""><img src="/img/calendar.png" alt="" class="icon_cale"> ${e.year}</p>
