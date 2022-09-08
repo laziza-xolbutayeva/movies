@@ -1,11 +1,11 @@
 'use strict'
 
-const frame=document.querySelector(".frame"),
-      count=document.querySelector(".searchCont"),
-      movietitle=document.querySelector(".movies-title"),
-      movierating=document.querySelector("#movies-reting"),
-      moviecatigorie=document.querySelector("#movies-catigories"),
-      btn=document.querySelector("#btn_search");
+const frame=$(".frame"),
+      count=$(".searchCont"),
+      movietitle=$(".movies-title"),
+      movierating=$("#movies-reting"),
+      moviecatigorie=$("#movies-catigories"),
+      btn=$("#btn_search");
 
 
       
@@ -13,7 +13,7 @@ const frame=document.querySelector(".frame"),
 // MORE INFO  function
 // 
 function MoreButton(){
-  var info=document.querySelectorAll("#info");
+  var info=$all("#info");
   info.forEach((e,i,m)=>{
     e.addEventListener("click",()=>{
       alert(`${movies[i].summary}`);
@@ -26,8 +26,8 @@ function MoreButton(){
 // BOOKMARK function
 // 
 function BookmarkCreate(){
-  var bookmark=document.querySelectorAll("#bookmark"),
-      frameB=document.querySelector(".frame_bookmark");
+  var bookmark=$all("#bookmark"),
+      frameB=$(".frame_bookmark");
   bookmark.forEach((e,i,m)=>{
     e.addEventListener("click",()=>{
       let frameDiv=document.createElement("div");
@@ -52,7 +52,7 @@ const funcmovie=(array,box)=>{
       <div class="card" style="width:286px">
         <div class="card-body">
           <div class="card_pic d-flex align-items-center">
-            <img src="${e.smallThumbnail}" class="card-img-top" alt="${e.title}">
+            <img srcset="${e.smallThumbnail} 1x, ${e.bigThumbnail} 2x" class="card-img-top" alt="${e.title}">
           </div>
           <h3 class="card-title height">${e.title}</h3>
           <p class=""><img src="/img/calendar.png" alt="" class="icon_cale"> ${e.year}</p>
@@ -153,12 +153,12 @@ btn.addEventListener("click",()=>{
     count.textContent=`${movies.length}`;
   }
   else{
-  let mass=movies.filter((item)=>{
-    let n=0;
-    item.categories.forEach( e => (e==moviecatigorie.value) ? n=1:0);
-    if((item.title.toLowerCase().search(`${movietitle.value.toLowerCase()}`))>=0 && Math.floor(item.imdbRating)==movierating.value && n==1){
-      console.log(item);
-      return item;
+    let mass=movies.filter((item)=>{
+      let n=0;
+      item.categories.forEach( e => (e==moviecatigorie.value) ? n=1:0);
+      if((item.title.toLowerCase().search(`${movietitle.value.toLowerCase()}`))>=0 && Math.floor(item.imdbRating)==movierating.value && n==1){
+        console.log(item);
+        return item;
     }
   })
   frame.innerHTML="";
